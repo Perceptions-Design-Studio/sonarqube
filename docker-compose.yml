@@ -23,8 +23,6 @@ services:
       - sonarqube_temp:/opt/sonarqube/temp
     expose:
       - "9000"
-    networks:
-      - sonarqube
   db:
     image: postgres:17
     healthcheck:
@@ -41,8 +39,6 @@ services:
     volumes:
       - postgresql:/var/lib/postgresql
       - postgresql_data:/var/lib/postgresql/data
-    networks:
-      - sonarqube
 
 volumes:
   sonarqube_data:
